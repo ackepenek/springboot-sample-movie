@@ -1,4 +1,4 @@
-var movieModule = angular.module('movieApp', []);
+var movieModule = angular.module('movieApp', ['ngMaterial']);
 
 movieModule.controller('movieController', function ($scope, $http) {
     var urlBase="";
@@ -11,7 +11,7 @@ movieModule.controller('movieController', function ($scope, $http) {
             type: $scope.type
         }).
         success(function(data) {
-            alert(data);
+            alert(data.name + " saved");
         });
     }
 });

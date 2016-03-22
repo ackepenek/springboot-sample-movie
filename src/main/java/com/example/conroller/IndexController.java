@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Developed by Ahmet Can Kepenek (ahmetcan.kepenek@gmail.com)
@@ -24,8 +27,8 @@ public class IndexController {
 
     @RequestMapping(value="/save", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseBody
-    public String save(@RequestBody Movie movie){
+    public Object save(@RequestBody Movie movie){
         movieRepository.save(movie);
-        return "added";
+        return movie;
     }
 }

@@ -1,20 +1,35 @@
 <!doctype html>
 <html>
-<head>
     <head>
         <title>Getting Started: Serving Web Content</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
         <script src="js/angular.min.js"></script>
+        <script src="js/angular-material.min.js"></script>
+        <script src="js/angular-animate.min.js"></script>
+        <script src="js/angular-aria.min.js"></script>
+
         <script src="js/app.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="/css/angular-material.min.css"/>
     </head>
-</head>
-<body>
-<div ng-app="movieApp">
-    <div ng-controller="movieController">
-        Name: <input type="text" ng-model="name"/>
-        Type: <input type="text" ng-model="type"/>
-        <button ng-click="saveMovie()">Save</button>
-    </div>
-</div>
-</body>
+    <body>
+        <div ng-app="movieApp">
+            <div ng-controller="movieController">
+                <div layout-gt-sm="row">
+                    <md-input-container>
+                        <label>Name</label>
+                        <input type="text" ng-model="name"/>
+                    </md-input-container>
+                </div>
+                <div layout-gt-sm="row">
+                    <md-input-container>
+                        <label>Type</label>
+                        <input type="text" ng-model="type"/>
+                    </md-input-container>
+                </div>
+                <md-button class="md-raised md-primary" ng-click="saveMovie()">Save</md-button>
+            </div>
+        </div>
+    </body>
 </html>
